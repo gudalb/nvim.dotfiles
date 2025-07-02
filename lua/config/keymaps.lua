@@ -8,3 +8,7 @@ map("n", "<leader>da", "<Cmd>lua require('neotest').run.run(vim.fn.expand('%'))<
 map("n", "<leader>ds", "<Cmd>lua require('neotest').run.stop()<cr>", { desc = "Stop runnng tests" })
 map("n", "<leader>dS", "<Cmd>lua require('neotest').summary.open()<cr>", { desc = "Open summary" })
 map("n", "<leader>dC", "<Cmd>lua require('neotest').summary.close()<cr>", { desc = "Close summary" })
+
+vim.keymap.set({ "n", "x" }, "<leader>ca", function()
+    require("tiny-code-action").code_action()
+end, { noremap = true, silent = true })
