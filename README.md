@@ -1,4 +1,8 @@
 # 💤 LazyVim
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+My dot files for LazyVim.
+Refer to the [documentation](https://lazyvim.github.io/installation) to start your own LazyVim configuration
+
+## Notes
+### Install roslyn to get csharp LSP functionality
+:MasonInstall roslyn
