@@ -6,3 +6,4 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to start yo
 ## Notes
 ### Install roslyn to get csharp LSP functionality
 :MasonInstall roslyn
+Make sure DOTNET_ROOT is set
