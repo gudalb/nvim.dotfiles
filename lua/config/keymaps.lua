@@ -15,9 +15,10 @@ map("n", "<C-q>", function()
   vim.api.nvim_buf_delete(current_buf, { force = false })
 end, { desc = "Close buffer and go to last opened" })
 
+-- debugging
 local opts = { noremap = true, silent = true }
 
-map("n", "<F5>", "<Cmd>lua require'dap'.continue()<CR>", opts)
+map("n", "<F5>", "<Cmd>lua require'dap'.continue()<CR>")
 map("n", "<F6>", "<Cmd>lua require('neotest').run.run({strategy = 'dap'})<CR>", opts)
 map("n", "<F9>", "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
 map("n", "<F10>", "<Cmd>lua require'dap'.step_over()<CR>", opts)
@@ -32,3 +33,19 @@ map(
   "<Cmd>lua require('neotest').run.run({strategy = 'dap'})<CR>",
   { noremap = true, silent = true, desc = "debug nearest test" }
 )
+vim.keymap.set("n", "<leader>dq", function()
+  local dap = require("dap")
+
+  if dap.session() then
+    dap.terminate()
+  end
+
+  dap.close()
+
+  local dapui_ok, dapui = pcall(require, "dapui")
+  if dapui_ok then
+    dapui.close()
+  end
+
+  print("All DAP instances terminated")
+end, { desc = "Force quit all DAP instances" })
