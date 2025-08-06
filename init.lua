@@ -13,3 +13,5 @@ require("neotest").setup({
     require("neotest-dotnet"),
   },
 })
+
+vim.opt.swapfile = false
