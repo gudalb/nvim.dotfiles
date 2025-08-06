@@ -27,6 +27,7 @@ return {
         "prettier",
         "json-lsp",
         "netcoredbg",
+        "typescript-language-server",
       },
     },
   },
